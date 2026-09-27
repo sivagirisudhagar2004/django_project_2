@@ -7,9 +7,9 @@ from .models import Datas
 def home(request):        
     mydata = Datas.objects.all()
     if(mydata != ''):
-        return render(request,'home_3.html',{'datas':mydata})
+        return render(request,'home.html',{'datas':mydata})
     else:
-        return render(request,'home_3.html')
+        return render(request,'home.html')
 
 def addData(request):     # 127.0.0.1:8000/addData
     if(request.method == "POST"):
@@ -28,7 +28,7 @@ def addData(request):     # 127.0.0.1:8000/addData
         obj.save()
         mydata = Datas.objects.all()
         return redirect('home')
-    return render(request,"home_3.html")    
+    return render(request,"home.html")    
 
 def updateData(request,id): # 127.0.0.1:8000/updataData
     Mydata = Datas.objects.get(id = id)
