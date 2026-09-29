@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Application'
+    'Application',
+    'Admin_Panel'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'django_project_2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'tamplats')],
+        'DIRS': [os.path.join(BASE_DIR,'tamplats/Admin_Panel')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +122,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIR = [
     BASE_DIR /'static'
 ]
-
+LOGIN_REDIRECT_URL = "Home"
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
